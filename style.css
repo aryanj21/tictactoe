@@ -1,0 +1,166 @@
+/* General Reset: Remove default margin and padding from all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif; /* Standard font family */
+    background: linear-gradient(to bottom, #f0f8ff, #87ceeb); /* Sky blue gradient background */
+    color: #333; /* Dark grey color for text */
+    line-height: 1.6; /* Increase line spacing for readability */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full viewport height */
+}
+
+/* Header Styling */
+header {
+    background-color: #333; /* Dark background for header */
+    color: #fff; /* White text color */
+    text-align: center; /* Center the header text */
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow to separate header */
+}
+
+header img {
+    width: 100px; /* Adjust logo size */
+}
+
+/* Main Section Styling */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80vh; /* Main section takes up 80% of the viewport height */
+    text-align: center; /* Center content in the main section */
+    padding: 20px;
+}
+
+h1, h2 {
+    font-size: 3rem; /* Large size for main title */
+    color: #333; /* Dark text for headings */
+    margin-bottom: 20px; /* Space below the headings */
+}
+
+h2 {
+    font-size: 2rem; /* Slightly smaller size for subheading */
+}
+
+p {
+    font-size: 1.2rem; /* A bit larger than normal text for readability */
+    color: #555; /* Lighter grey for body text */
+    margin-bottom: 30px; /* Space below paragraph */
+}
+
+/* Game Area Styling (for future game content) */
+#game {
+    background-color: #fff; /* White background for the game area */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Space inside the box */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center; /* Center text inside the game area */
+}
+
+/* Button Styling */
+button {
+    padding: 10px 20px; /* Button padding */
+    background-color: #333; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1.2rem; /* Larger font for button text */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+button:hover {
+    background-color: #444; /* Darker button background on hover */
+}
+
+/* Ads Section Styling */
+.ads {
+    margin: 20px 0; /* Add vertical margin */
+    text-align: center; /* Center-align ads */
+}
+
+/* Footer Styling */
+footer {
+    text-align: center; /* Center footer text */
+    padding: 20px 10px; /* Add padding inside footer */
+    background-color: #333; /* Dark background for footer */
+    color: #fff; /* White text in footer */
+    margin-top: auto; /* Push footer to the bottom */
+}
+
+footer p {
+    font-size: 1rem; /* Standard font size for footer text */
+}
+
+/* Social Media Icon Styling */
+footer .social-media-icons {
+    display: flex;
+    justify-content: center; /* Center align icons */
+    gap: 20px; /* Space between icons */
+    margin-top: 10px;
+}
+
+/* Individual Icon Styling */
+footer .social-media-icons a {
+    display: block; /* Make the <a> tag a block-level element */
+    width: 50px; /* Adjusted size of the icon */
+    height: 50px; /* Adjusted size of the icon */
+    border-radius: 50%; /* Make icons circular */
+    overflow: hidden; /* Ensure images fit within the circle */
+    border: 2px solid #fff; /* Add a white border around the icons */
+    transition: transform 0.3s ease; /* Add a hover effect */
+}
+
+/* Image inside icons */
+footer .social-media-icons a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the circle */
+}
+
+/* Hover effect on icon */
+footer .social-media-icons a:hover {
+    transform: scale(1.1); /* Slightly enlarge icon on hover */
+}
+
+/* Add media query for responsiveness */
+@media screen and (max-width: 768px) {
+    footer .social-media-icons a {
+        width: 40px; /* Smaller size for icons on mobile */
+        height: 40px;
+    }
+
+    footer .social-media-icons {
+        gap: 15px; /* Adjust gap for smaller screens */
+    }
+
+    footer p {
+        font-size: 0.9rem; /* Smaller font size for footer text on mobile */
+    }
+}
+
+/* Styling for Favicon */
+link[rel="icon"] {
+    /* Ensure the favicon is sized properly */
+    width: 32px;
+    height: 32px;
+}
+
+/* Additional Styling to improve user experience */
+a {
+    transition: color 0.3s ease; /* Smooth transition for link hover effect */
+}
+
+a:hover {
+    color: #ff6600; /* Change color to orange on hover */
+}
