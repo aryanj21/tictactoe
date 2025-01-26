@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Play Tic-Tac-Toe multiplayer online for free. Challenge random opponents or friends with a unique game code.">
+
+    <!-- Social Media Sharing Metadata -->
+    <meta property="og:title" content="Tic-Tac-Toe Multiplayer Game">
+    <meta property="og:description" content="Challenge your friends or random opponents to play Tic-Tac-Toe online. Free and fun!">
+    <meta property="og:image" content="https://your-website-url.com/images/logo.jpg">
+    <meta property="og:url" content="https://your-website-url.com">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tic-Tac-Toe Multiplayer Game">
+    <meta name="twitter:description" content="Challenge your friends or random opponents to play Tic-Tac-Toe online. Free and fun!">
+    <meta name="twitter:image" content="https://your-website-url.com/images/logo.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MFTNTK7Y6J"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-MFTNTK7Y6J');
+    </script>
+
+    <title>Tic-Tac-Toe Multiplayer</title>
+    <style>
+        /* The same style as before */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #f0f8ff, #87ceeb);
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            position: relative;
+        }
+
+        header img {
+            width: 100px;
+        }
+
+        header .back-btn {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #333;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            flex-direction: column;
+        }
+
+        .board {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+            gap: 5px;
+            margin: 20px 0;
+        }
+
+        .cell {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            font-size: 2em;
+            cursor: pointer;
+            border: 2px solid #333;
+        }
+
+        .winner-popup {
+            text-align: center;
+            font-size: 1.5em;
+            margin-top: 20px;
+            color: #fff;
+        }
+
+        .party-popper {
+            width: 100px;
+            height: 100px;
+            background-color: #ffcc00;
+            border-radius: 50%;
+            margin: 20px auto;
+            animation: pop 1s ease-out;
+        }
+
+        @keyframes pop {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.5);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        footer a {
+            color: #87ceeb;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .ads {
+            margin: 20px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tic-Tac-Toe Multiplayer</h1>
+        <button class="back-btn" id="backBtn" style="display:none;" onclick="goBack()">Back</button>
+    </header>
+    <main>
+        <div id="game">
+            <div id="modeSelection">
+                <button onclick="chooseMode('single')">Single Player</button>
+                <button onclick="chooseMode('multiplayer')">Multiplayer</button>
+            </div>
+            <div id="nameInputs" style="display:none;">
+                <label for="player1Name">Your Name: </label>
+                <input type="text" id="player1Name" placeholder="Enter your name" /><br><br>
+                <label for="player2Name" id="player2Label" style="display:none;">Player 2 Name: </label>
+                <input type="text" id="player2Name" placeholder="Enter Player 2's Name" style="display:none;" /><br><br>
+                <button onclick="startGame()">Start Game</button>
+            </div>
+            <div id="boardContainer" style="display:none;">
+                <div class="board" id="board"></div>
+                <button onclick="resetGame()">Restart Game</button>
+            </div>
+            <div id="winnerPopup" class="winner-popup" style="display:none;"></div>
+            <div id="partyPopper" class="party-popper" style="display:none;"></div>
+        </div>
+
+        <!-- AdSense Ad Unit -->
+        <div class="ads">
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-2836514493000155"
+                data-ad-slot="2474677600"
+                data-ad-format="auto"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Tic-Tac-Toe game.</p>
+        <p>All rights reserved</p>
+    <div class="social-media-icons">
+        <!-- Instagram Icon -->
+        <a href="https://www.instagram.com/aryanj_27/" target="_blank" aria-label="Instagram">
+            <img src="D:\My Things\tic_tac_toe\images\instagram-logo.svg.png" alt="Instagram">
+        </a>
+        <!-- Twitter/X Icon -->
+        <a href="https://x.com/aryanj_27" target="_blank" aria-label="Twitter">
+            <img src="D:\My Things\tic_tac_toe\images\X-logo.svg.png" alt="Twitter">
+        </a>
+        <!-- YouTube Icon -->
+        <a href="https://www.youtube.com/@folksdisappointment" target="_blank" aria-label="YouTube">
+            <img src="D:\My Things\tic_tac_toe\images\youtube-logo.png" alt="YouTube">
+        </a>
+    </div>
+    </footer>
+
+    <!-- Link to script.js -->
+    <script src="script.js"></script>
+</body>
+</html>
